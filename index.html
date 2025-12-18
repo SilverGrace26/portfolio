@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" x-data="portfolio()">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind custom colors -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b132b',
+            deepblue: '#1c2541',
+            steelblue: '#3a86ff',
+            slateblue: '#5bc0eb'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+
+<body class="bg-midnight text-gray-200">
+
+  <!-- PROFILE / HEADER SECTION -->
+  <section class="w-full bg-deepblue py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Ayush Saraswat</h1>
+      <p class="text-lg text-gray-300 mb-6 max-w-3xl">
+            I’m interested in system-level ML and computer vision, with an emphasis on implementing and analyzing models at a low level rather than treating them as black boxes. I enjoy reimplementing ideas from research papers and classical methods to better understand how learning systems behave in practice.
+
+            You will find me reading a novel or playing old games in my free time.
+      </p>
+
+      <p class="text-gray-300 mb-8">
+        <span class="font-semibold text-slateblue">Interests:</span>
+        Computer Vision, 3D Vision, Deep Learning, JAX, Systems-level ML
+      </p>
+
+      <!-- Contact Links -->
+      <div class="flex gap-6">
+        <a href="https://github.com/SilverGrace26" class="text-steelblue hover:underline">Github</a>
+        <a href="https://codeberg.org/SilverGrace26" class="text-steelblue hover:underline">Codeberg (preferred)</a>
+        <a href="https://flashblog.hashnode.dev" class="text-steelblue hover:underline">Blog</a>
+        <a href="ayushsaraswat2615@proton.me" class="text-steelblue hover:underline">Email</a>
+        <a href="silvergrace007@gmail.com" class="text-steelblue hover:underline">Email</a>
+        <a href="https://x.com/Ayush26_twt" class="text-steelblue hover:underline">Twitter (preferred)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <div class="max-w-6xl mx-auto py-14 px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center">My Projects</h2>
+
+    <!-- Tag Filter -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <template x-for="tag in allTags" :key="tag">
+        <button 
+          @click="toggleTag(tag)"
+          class="px-3 py-1 rounded-full border text-sm"
+          :class="selectedTags.includes(tag) 
+            ? 'bg-steelblue text-white border-steelblue' 
+            : 'bg-deepblue border-gray-600 hover:bg-midnight'"
+          x-text="tag">
+        </button>
+      </template>
+    </div>
+
+    <!-- Project Grid -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <template x-for="project in filteredProjects" :key="project.id">
+        <div class="bg-deepblue rounded-xl shadow hover:shadow-xl transition cursor-pointer"
+             @click="openModal(project)">
+          <img :src="project.image" alt="" class="rounded-t-xl object-cover h-40 w-full">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-3" x-text="project.title"></h3>
+            <div class="flex flex-wrap gap-2">
+              <template x-for="tag in project.tags" :key="tag">
+                <span class="px-2 py-1 bg-midnight text-xs rounded" x-text="tag"></span>
+              </template>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div x-show="showModal" 
+       class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50"
+       @click.self="closeModal"
+       x-transition>
+    <div class="bg-deepblue rounded-xl max-w-2xl w-full p-6 shadow-xl" x-show="selectedProject" x-transition>
+      <h2 class="text-2xl font-bold mb-4" x-text="selectedProject?.title"></h2>
+      <img :src="selectedProject?.image" class="rounded-lg mb-4 w-full">
+      <div class="prose prose-invert max-w-none" x-html="selectedProject?.description"></div>
+      <div class="mt-6 flex gap-4">
+        <a :href="selectedProject?.github" target="_blank" class="px-4 py-2 bg-steelblue text-white rounded-lg hover:opacity-90">GitHub</a>
+        <a :href="selectedProject?.blog" target="_blank" class="px-4 py-2 bg-slateblue text-midnight rounded-lg hover:opacity-90">Blog Post</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alpine Component -->
+  <script>
+    function portfolio() {
+      return {
+        projects: [],
+        selectedTags: [],
+        showModal: false,
+        selectedProject: null,
+
+        init() {
+          this.loadProjects();
+        },
+
+        get allTags() {
+          return [...new Set(this.projects.flatMap(p => p.tags))];
+        },
+
+        get filteredProjects() {
+          if (this.selectedTags.length === 0) return this.projects;
+          return this.projects.filter(p =>
+            this.selectedTags.every(tag => p.tags.includes(tag))
+          );
+        },
+
+        toggleTag(tag) {
+          this.selectedTags.includes(tag)
+            ? this.selectedTags = this.selectedTags.filter(t => t !== tag)
+            : this.selectedTags.push(tag);
+        },
+
+        openModal(project) {
+          this.selectedProject = project;
+          this.showModal = true;
+          document.body.style.overflow = 'hidden';
+        },
+
+        closeModal() {
+          this.showModal = false;
+          this.selectedProject = null;
+          document.body.style.overflow = 'auto';
+        },
+
+        async loadProjects() {
+          const res = await fetch('projects.json');
+          this.projects = await res.json();
+        }
+      }
+    }
+  </script>
+</body>
+</html>

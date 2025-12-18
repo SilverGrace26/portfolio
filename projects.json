@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Stereo Camera Calibration",
+    "image": "images/CC.png",
+    "tags": ["Computer Vision", "C++", "3DCV"],
+    "github": "https://codeberg.org/SilverGrace26/stereo-calibration",
+    "blog": "https://flashblog.hashnode.dev/series/camera-calibration",
+    "description": "<p><strong>Implemented Stereo Camera Calibration without OpenCV's Inbuilt Function.</strong></p><ul class='list-disc pl-5 space-y-1'><li>Done Without OpenCV's in-built method</li><li>Dataset contains 20 images each from left and right camera of a chessboard of Square Size 30mm and 11x7 (corners)</li><li>RMS error 2.306 px as compared to OpenCV's 14.1364 px</li></ul>"
+  },
+  {
+    "id": 2,
+    "title": "Vision Transformer in Equinox",
+    "image": "images/ViT.png",
+    "tags": ["Computer Vision", "Deep Learning", "JAX", "Python"],
+    "github": "https://codeberg.org/SilverGrace26/ViT-Equinox",
+    "blog": "https://flashblog.hashnode.dev/vision-transformers-in-jax",
+    "description": "<p><strong>Implemented Vision Transformer from Scratch in Equinox</strong></p><ul class='list-disc pl-5 space-y-1'><li>Orbax used for checkpointing ar regular intervals</li><li> Almost 80% accuracy on CIFAR-10 dataset.</li></ul>"
+  },
+  {
+    "id": 3,
+    "title": "Surface Reconstruction of Stanford Bunny ",
+    "image": "images/ICP.png",
+    "tags": ["Computer Vision", "C++", "3DCV"],
+    "github": "https://codeberg.org/SilverGrace26/surface-reconstruction",
+    "blog": "https://flashblog.hashnode.dev/iterative-closest-point-registration-with-open3d-c", 
+    "description": "<p><strong>ICP Registration and Poisson Surface Reconstruction on Stanford Bunny Dataset</strong></p><ul class='list-disc pl-5 space-y-1'><li>Custom Recovery method with Fallback to FPFH and custom Loss Metric (Fitness/RMSE)</li><li> Poisson Surface Reconstruction for watertight mesh</li></ul>"
+  },
+  {
+    "id": 4,
+    "title": "TensoRF implementation in Equinox",
+    "image": "images/TensoRF.png",
+    "tags": ["Computer Vision", "Python", "3DCV", "Deep Learning", "JAX"],
+    "github": "https://www.kaggle.com/code/blackflash26/tensorf",
+    "blog": "https://flashblog.hashnode.dev/tensorrf-explained-a-milestone-in-novel-view-synthesis",
+    "description": "<p><strong>Implementation of TensoRF research paper in Equinox (An improvement of base Neural Radiance Fields)</strong></p><ul class='list-disc pl-5 space-y-1'><li>Achieved 32+ dB PSNR (2 dB more than original paper)</li><li>Device Used : Kaggle's TPU v5-8 </li><li>Time Taken : 1 hr 30 min (apx)</li><li>Dataset : Mic class of NeRF synthetic dataset</li></ul>"
+  },
+  {
+    "id": 5,
+    "title": "Convolutional Neural Network From Scratch",
+    "image": "images/CNN.png",
+    "tags": ["Computer Vision", "Python", "Deep Learning"],
+    "github": "https://codeberg.org/SilverGrace26/CNN-from-scratch",
+    "blog": "https://flashblog.hashnode.dev/series/understanding-cnn",
+    "description": "<p><strong>Implemented Convolutional Neural Network from Scratch:</strong></p><ul class='list-disc pl-5 space-y-1'><li>Used Cupy and Numba for GPU acceleration</li><li>Worked on Intel Image Classification Dataset with 1000 images of 64x64</li><li>Reduced training time to 10 mins</li></ul>"
+  }
+]
