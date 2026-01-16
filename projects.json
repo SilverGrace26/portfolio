@@ -6,7 +6,7 @@
     "tags": ["Computer Vision", "C++", "3DCV"],
     "github": "https://codeberg.org/SilverGrace26/stereo-calibration",
     "blog": "https://flashblog.hashnode.dev/series/camera-calibration",
-    "description": "<p><strong>Implemented Stereo Camera Calibration without OpenCV's Inbuilt Function.</strong></p><ul class='list-disc pl-5 space-y-1'><li>Done Without OpenCV's in-built method</li><li> Uses Zhang's Method for Monocular Calibration</li><li>Dataset contains 20 images each from left and right camera of a chessboard of Square Size 30mm and 11x7 (corners)</li><li>RMS error 2.306 px as compared to OpenCV's 14.1364 px</li></ul>"
+    "description": "<p><strong>Implemented Stereo Camera Calibration without OpenCV's Inbuilt Function.</strong></p><ul class='list-disc pl-5 space-y-1'><li>Done Without OpenCV's in-built method</li><li> Uses Zhang's Method for Monocular Calibration</li><li>Dataset contains 20 images each from left and right camera of a chessboard of Square Size 30mm and 11x7 (corners)</li><li>RMS error 2.306 px</li></ul>"
   },
   {
     "id": 2,
