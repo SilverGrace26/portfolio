@@ -43,5 +43,14 @@
     "github": "https://codeberg.org/SilverGrace26/CNN-from-scratch",
     "blog": "https://flashblog.hashnode.dev/series/understanding-cnn",
     "description": "<p><strong>Implemented Convolutional Neural Network from Scratch:</strong></p><ul class='list-disc pl-5 space-y-1'><li>Used Cupy for GPU acceleration</li><li>Dataset : CIFAR-10</li><li>Training Time : 6.5 mins (apx)</li><li>Accuracy : 66% (without Augmentation, with only SGD for optimization)</li></ul>"
+  },
+  {
+    "id": 6,
+    "title": "Full VO + BA SLAM pipeline",
+    "image": "yada yada",
+    "tags": ["Rust", "Computer Vision", "3DCV"],
+    "github": "https://codeberg.org/SilverGrace26/rust-slam",
+    "blog": "Article yet to be done",
+    "description": "<p><strong>Implemented complete Visual SLAM pipeline in Rust</strong></p><ul class='list-disc pl-5 space-y-1'><li>Achieves 1.7-2.2 cm rmse on TUM fr1_xyz dataset in 1 minute 16 secs apx.</li><li>Has FAST9 feature extraction, KLT patch tracking and ZNCC based frame-to-map matching in frontend</li><li>Local Bundle Adjustment followed by restrained loop closure and pose graph optimization using apex-solver</li><li>Rerun based visualization</li>"
   }
 ]
