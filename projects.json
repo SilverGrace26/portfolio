@@ -31,7 +31,8 @@
     "title": "TensoRF implementation in Equinox",
     "image": "images/TensoRF.png",
     "tags": ["Computer Vision", "Python", "3DCV", "Deep Learning", "JAX"],
-    "github": "https://www.kaggle.com/code/blackflash26/tensorf",
+    "github": "https://codeberg.org/SilverGrace26/TensoRF",
+    "kaggle": "https://www.kaggle.com/code/blackflash26/tensorf",
     "blog": "https://flashblog.hashnode.dev/tensorrf-explained-a-milestone-in-novel-view-synthesis",
     "description": "<p><strong>Implementation of TensoRF research paper in Equinox (An improvement of base Neural Radiance Fields)</strong></p><ul class='list-disc pl-5 space-y-1'><li>Achieved 30+ dB PSNR</li><li>Device Used : Kaggle's TPU v5-8 </li><li>Training Time : 45 min (apx)</li><li>Dataset : Mic and Lego class of NeRF synthetic dataset</li></ul>"
   },
