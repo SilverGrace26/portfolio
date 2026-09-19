@@ -33,7 +33,7 @@
     "tags": ["Computer Vision", "Python", "3DCV", "Deep Learning", "JAX"],
     "github": "https://www.kaggle.com/code/blackflash26/tensorf",
     "blog": "https://flashblog.hashnode.dev/tensorrf-explained-a-milestone-in-novel-view-synthesis",
-    "description": "<p><strong>Implementation of TensoRF research paper in Equinox (An improvement of base Neural Radiance Fields)</strong></p><ul class='list-disc pl-5 space-y-1'><li>Achieved 32+ dB PSNR (2 dB more than original paper)</li><li>Device Used : Kaggle's TPU v5-8 </li><li>Time Taken : 1 hr 30 min (apx)</li><li>Dataset : Mic class of NeRF synthetic dataset</li></ul>"
+    "description": "<p><strong>Implementation of TensoRF research paper in Equinox (An improvement of base Neural Radiance Fields)</strong></p><ul class='list-disc pl-5 space-y-1'><li>Achieved 30+ dB PSNR</li><li>Device Used : Kaggle's TPU v5-8 </li><li>Training Time : 45 min (apx)</li><li>Dataset : Mic and Lego class of NeRF synthetic dataset</li></ul>"
   },
   {
     "id": 5,
@@ -47,10 +47,10 @@
   {
     "id": 6,
     "title": "Full VO + BA SLAM pipeline",
-    "image": "yada yada",
+    "image": "images/VI_SLAM.png",
     "tags": ["Rust", "Computer Vision", "3DCV"],
     "github": "https://codeberg.org/SilverGrace26/rust-slam",
     "blog": "Article yet to be done",
-    "description": "<p><strong>Implemented complete Visual SLAM pipeline in Rust</strong></p><ul class='list-disc pl-5 space-y-1'><li>Achieves 1.7-2.2 cm rmse on TUM fr1_xyz dataset in 1 minute 16 secs apx.</li><li>Has FAST9 feature extraction, KLT patch tracking and ZNCC based frame-to-map matching in frontend</li><li>Local Bundle Adjustment followed by restrained loop closure and pose graph optimization using apex-solver</li><li>Rerun based visualization</li>"
+    "description": "<p><strong>Implemented complete Visual SLAM pipeline in Rust</strong></p><ul class='list-disc pl-5 space-y-1'><li>Real-time performance (~26 FPS) across TUM RGB-D datasets with RMSE: <ul class='list-circle pl-5 mt-1 space-y-1'><li>fr1_xyz: 1.6 cm</li><li>fr1_rpy: 5.9 - 6.7 cm (varying due to rapid rotations)</li><li>fr2_xyz: 2.1 cm</li><li>fr2_rpy: 0.9 cm</li></ul></li><li>Has oFAST + rBRIEF feature extraction, KLT patch tracking based frontend</li><li>Local Bundle Adjustment followed by restrained loop closure and pose graph optimization using apex-solver</li><li>Rerun based visualization</li></ul>"
   }
 ]
